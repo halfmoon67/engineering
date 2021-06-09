@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="empJoin" method="get" name="frm"> <!-- 공개:get or 비공개:post -->
+<form action="empJoin" method="post" name="frm"> <!-- 공개:get or 비공개:post -->
 <table border=1 width="500" align="center">
 	<tr><td width="130">직원번호</td>
 		<td width="370">
@@ -51,7 +51,7 @@
 		<td>
 			<input type="text" name="salary">
 		</td></tr>
-	<tr><td colspan=2>
+	<tr><td colspan=2 align="Center">
 		<input type="submit" value="직원등록 완료">
 		<input type="reset" value="초기화">
 	</td></tr>
