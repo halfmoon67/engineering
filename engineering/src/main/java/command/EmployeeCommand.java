@@ -10,13 +10,12 @@ public class EmployeeCommand {
 	String empPw;
 	String empPwCon;
 	String empName;
-	String empDeptNum;
+	String empDeptNumber;
 	String empEmail;
-	String empPhoneNum;
+	String empPhoneNumber;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	Date hireDate;
 	Long salary;
-	
 	public Long getEmpNo() {
 		return empNo;
 	}
@@ -47,11 +46,11 @@ public class EmployeeCommand {
 	public void setEmpName(String empName) {
 		this.empName = empName;
 	}
-	public String getEmpDeptNum() {
-		return empDeptNum;
+	public String getEmpDeptNumber() {
+		return empDeptNumber;
 	}
-	public void setEmpDeptNum(String empDeptNum) {
-		this.empDeptNum = empDeptNum;
+	public void setEmpDeptNumber(String empDeptNumber) {
+		this.empDeptNumber = empDeptNumber;
 	}
 	public String getEmpEmail() {
 		return empEmail;
@@ -59,11 +58,11 @@ public class EmployeeCommand {
 	public void setEmpEmail(String empEmail) {
 		this.empEmail = empEmail;
 	}
-	public String getEmpPhoneNum() {
-		return empPhoneNum;
+	public String getEmpPhoneNumber() {
+		return empPhoneNumber;
 	}
-	public void setEmpPhoneNum(String empPhoneNum) {
-		this.empPhoneNum = empPhoneNum;
+	public void setEmpPhoneNumber(String empPhoneNumber) {
+		this.empPhoneNumber = empPhoneNumber;
 	}
 	public Date getHireDate() {
 		return hireDate;
@@ -77,7 +76,6 @@ public class EmployeeCommand {
 	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
-	
 	public boolean isEmpPwEqualsEmpPwCon() {
 		if(empPw.equals(empPwCon)) {
 			return true;
@@ -85,6 +83,4 @@ public class EmployeeCommand {
 			return false;
 		}
 	}
-	
-
 }

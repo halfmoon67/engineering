@@ -1,38 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
   <groupId>sp4</groupId>
   <artifactId>engineering</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
+  <version>0.0.1-SNAPSHOT</version>
   <name>engineering Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://maven.apache.org</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-    
-    <org.springframework-version>5.0.5.RELEASE</org.springframework-version>
-    <java-version>1.8</java-version>
-    <org.slf4j-version>1.6.6</org.slf4j-version>
-    
+  	 <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+     <org.springframework-version>5.0.5.RELEASE</org.springframework-version>
+     <java-version>1.8</java-version>
+     <org.slf4j-version>1.6.6</org.slf4j-version>
   </properties>
   <repositories>
-  	<repository>
-  		<id>oracle</id>
-  		<url>http://maven.jahia.org/maven2</url>
-  	</repository>
-  </repositories>
-  
+     <repository>
+        <id>oracle</id>
+        <url>http://maven.jahia.org/maven2</url>
+     </repository>
+  </repositories>	
+
   <dependencies>
-  
-   <!-- 파일 객체 -->
+     <!-- 파일 객체 -->
    <dependency>
        <groupId>commons-io</groupId>
        <artifactId>commons-io</artifactId>
@@ -50,23 +40,16 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- setter/getter constructor 자동 생성 -->
-    <dependency>
-       <groupId>org.projectlombok</groupId>
-       <artifactId>lombok</artifactId>
-       <version>1.18.12</version>
-       <scope>provided</scope>
-    </dependency>
     <!-- spring  -->
    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>5.0.5.RELEASE</version>
    </dependency> 
    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>5.0.5.RELEASE</version>
    </dependency>
    <!-- was -->
    <dependency>
@@ -91,7 +74,7 @@
    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>${org.springframework-version}</version>
+      <version>5.0.5.RELEASE</version>
    </dependency>
    <dependency>
       <groupId>com.mchange</groupId>
@@ -176,43 +159,8 @@
       <version>${org.slf4j-version}</version>
       <scope>runtime</scope>
    </dependency>
-    
   </dependencies>
-
   <build>
     <finalName>engineering</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.0.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-war-plugin</artifactId>
-          <version>3.2.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 </project>
