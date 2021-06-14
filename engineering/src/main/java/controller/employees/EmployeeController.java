@@ -30,6 +30,7 @@ public class EmployeeController {
 	EmployeeModifyService employeeModifyService;
 	@Autowired
 	EmployeeDeleteService employeeDeleteService;
+	
 	@RequestMapping("empList")
 	public String empList(Model model) {
 		employeeListService.empList(model);
