@@ -15,6 +15,42 @@
 		PROD_INFO = #{prodInfo}
 	where PROD_NO = #{prodNo}
 </update>
+
+<select id="memCart" parameterType="string" resultType="string">
+	select prod_no from cart where memb_id = #{membId}
+</select>
+
+<resultMap type="model.productCartDTO" id="productCartMap">
+	<association property="productDTO" javaType="model.ProductDTO">
+		<result column="prod_name" jdbcType="VARCHAR" property="prodName"/>
+		<result column="prod_price" jdbcType="VARCHAR" property="prodPrice"/>
+	</association>
+	<association property="cartDTO" javaType="model.CartDTO">
+		<id column="mem_id" jdbcType="VARCHAR" property="membId"/>
+		<id column="prod_no" jdbcType="VARCHAR" property="prodNo"/>
+		<result column="cart_qty" jdbcType="VARCHAR" property="cartQty"/>
+		<result column="cart_price" jdbcType="VARCHAR" property="cartPrice"/>
+	</association>
+</resultMap>
+
+<select id="cartList" parameterType="model.CartDTO" resultMap="productCartMap">
+	select prod_name, prod_price, memb_id, prod_no, cart_qty, cart_price
+	from product p, cart c
+	where p.prod_no = c.prod_no and c.memb_id = #{membId} AND c.prod_no = #{prodNo}
+</select>
+
+<insert id="cartInsert" parameterType="model.CartDTO">
+	merge into cart c
+	using (select PROD_NO from product where PROD_NO = #{}) p
+	on (c.prod_no = p.prod_no and memb_id = #{})
+	when MATCHED TEHN
+	update set CART_QTY = CART_QTY + #{cartQty},
+			   CART_PRICE = CART_PRICE + #{cartPrice}
+	when not MATCHED THEN
+	insert into cart (MEMB_ID, PROD_NO, CAT_NUM, CART_QTY, CART_PRICE)
+	values(#{membId}, #{prodNo}, #{catNum}, #{cartQty}, #{cartPrice})
+</insert>
+
 <delete id="prodDelete" parameterType="string">
 	delete from product
 	where PROD_NO = #{prodNo}

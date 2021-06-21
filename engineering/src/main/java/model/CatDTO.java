@@ -4,6 +4,7 @@ public class CatDTO {
 	String catNum;
 	String catType;
 	String catName;
+	
 	public String getCatNum() {
 		return catNum;
 	}

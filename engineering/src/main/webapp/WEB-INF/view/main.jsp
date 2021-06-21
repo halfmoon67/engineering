@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnore="false"%>
+    pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -50,5 +50,25 @@
 </c:if>
 <a href="logout">로그아웃</a>
 </c:if>
+
+<table width="600">
+	<tr>
+	<c:forEach items="${prodList }" var="dto" varStatus="cnt">
+		<td>
+		<a href="prod/prodInfo?prodNo=${dto.prodNo }">
+		<img width="200" src="product/upload/${dto.prodImage.split(',')[0] }" />
+		<br/>${dto.prodName }
+		<br/>${dto.prodPrice }원
+		</a></td>
+		<c:if test="${cnt.count %3 == 0 }">
+			</tr><tr>
+		</c:if>
+	</c:forEach>
+	</tr>
+</table>
+
+
+
+
 </body>
 </html>
