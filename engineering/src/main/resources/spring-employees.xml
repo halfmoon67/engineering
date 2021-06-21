@@ -6,19 +6,19 @@
        		http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean class="controller.employees.EmployeeController"/>
 	<bean id="employeeService" 
-		class="service.employees.EmployeeService" />
+					class="service.employees.EmployeeService" />
 	<bean id="employeeRepository" 
-		class="repository.EmployeeRepository" />
+					class="repository.EmployeeRepository" />
 	<bean id="employeeNoService" 
-		class="service.employees.EmployeeNoService"/>
+					class="service.employees.EmployeeNoService"/>
 	<bean id="employeeListService" 
-		class="service.employees.EmployeeListService"/>	
+					class="service.employees.EmployeeListService"/>	
 	<bean id="employeeInfoService" 
-		class="service.employees.EmployeeInfoService"/>		
+					class="service.employees.EmployeeInfoService"/>		
 	<bean id="employeeModifyService" 
-		class="service.employees.EmployeeModifyService"/>	
+					class="service.employees.EmployeeModifyService"/>	
 	<bean id="employeeDeleteService" 
-		class="service.employees.EmployeeDeleteService"/>
+					class="service.employees.EmployeeDeleteService"/>
 
 </beans>
 

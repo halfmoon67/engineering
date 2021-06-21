@@ -29,7 +29,7 @@ public class LoginService {
 				session.removeAttribute("pwFail");
 				session.removeAttribute("userFail");
 			}else {
-				session.setAttribute("pwFain", "비밀번호가 일치하지 않습니다.");
+				session.setAttribute("pwFail", "비밀번호가 일치하지 않습니다.");
 				session.removeAttribute("userFail");
 			}
 		}

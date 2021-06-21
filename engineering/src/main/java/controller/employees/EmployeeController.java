@@ -74,4 +74,8 @@ public class EmployeeController {
 		employeeDeleteService.empDelete(empNo);
 		return "redirect:empList";
 	}
+	@RequestMapping("empMypage")
+	public String empMypage() {
+		return "employee/empMypage";
+	}
 }
